@@ -12,7 +12,7 @@ export default class Queue{
     };
 
     dequeue(){
-        return this.#data.shift
+        return this.#data.shift();
     };
 
     // metodo para consultar o inicio da fila sem remover
