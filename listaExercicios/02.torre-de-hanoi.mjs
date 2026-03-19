@@ -15,3 +15,58 @@
     conforme a imagem "Torre-Impressao.png". DEPOIS das movimentações, a TorreA deve estar com os discos na
     ordem [1,2,3,4] e as outras duas torres (TorreB e TorreC) devem estar vazias.
 */
+
+
+import Stack from "./lib/Stack.mjs";
+
+const torreA =  new Stack();
+const torreB =  new Stack();
+const torreC =  new Stack();
+
+//iniciar torre B
+torreB.push(1);
+torreB.push(2);
+torreB.push(3);
+torreB.push(4);
+
+console.log("----- ANTES ------");
+console.log("Torre A:", torreA.print());
+console.log("Torre B:", torreB.print());
+console.log("Torre C:", torreC.print());
+
+//movimentações
+torreC.push(torreB.pop());
+
+torreA.push(torreB.pop());
+
+torreA.push(torreC.pop());
+
+torreC.push(torreB.pop());
+
+torreB.push(torreA.pop());
+
+torreC.push(torreA.pop());
+
+torreC.push(torreB.pop());
+
+torreA.push(torreB.pop());
+
+torreA.push(torreC.pop());
+
+torreB.push(torreC.pop());
+
+torreB.push(torreA.pop());
+
+torreA.push(torreC.pop());
+
+torreC.push(torreB.pop());
+
+torreA.push(torreB.pop());
+
+torreA.push(torreC.pop());
+
+//resultado
+console.log("----- DEPOIS ------");
+console.log("TorreA:", torreA.print());
+console.log("TorreB:", torreB.print());
+console.log("TorreC:", torreC.print());
